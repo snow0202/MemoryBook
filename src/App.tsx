@@ -1,24 +1,19 @@
 import React from 'react';
-import './App.css';
+import './App.css'
+import { Login } from './Login';
+import { Components } from './Components/Components';
 
-function App() {
+const App: React.FC = () => {
+  const handleLogin = (email: string, password: string) => {
+    console.log('ログインされたメールアドレス:', email, 'とパスワード:', password);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Login onSubmit={handleLogin} />
+      <Components />
     </div>
   );
-}
+};
 
 export default App;
