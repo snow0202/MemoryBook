@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LoginEvent } from "./LoginEvent";
 
 interface LoginProps {
     onSubmit: (email: string, password: string) => void;
@@ -20,11 +21,12 @@ return (
             メールアドレス
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </label>
+          <div>{''}</div>
           <label>
             パスワード
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </label>
-          <button type="submit">ログイン</button>
+          <LoginEvent />
     </form>
     );
 };
