@@ -1,32 +1,38 @@
 import { useState } from "react";
+import Style from './Login.module.css';
 import { LoginEvent } from "./LoginEvent";
 
 interface LoginProps {
-    onSubmit: (email: string, password: string) => void;
+    onSubmit: (name: string, password: string) => void;
 }
 
 export const Login: React.FC<LoginProps> = ({ onSubmit }) => {
-    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
   
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      onSubmit(email, password);
+      onSubmit(name, password);
     };
 
 return (
-    <form onSubmit={handleSubmit}>
-        <h1>ログイン</h1>
-          <label>
-            メールアドレス
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </label>
-          <div>{''}</div>
-          <label>
-            パスワード
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          </label>
-          <LoginEvent />
-    </form>
-    );
+  <div className={Style['change-img-anim']}>
+      <form className={Style.form} onSubmit={handleSubmit}>
+          <h1 className={Style.head}>おもいでへようこそ✨</h1>
+          <div className={Style.label}>
+            <label className={Style.labelName}>
+              おなまえ {''}
+              <input className={Style.textName} type="name" value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+            <div>{''}</div>
+            <label className={Style.labelPass}>
+              パスワード {''}
+              <input className={Style.textPass} type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
+            <div>{''}</div>
+            <LoginEvent className={Style.loginButton} />
+            </div>
+      </form>
+    </div>
+  );
 };

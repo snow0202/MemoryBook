@@ -1,0 +1,106 @@
+.form {
+    text-align: center;
+}
+
+.head { 
+    text-align: center;
+    font-size: 50px;
+}
+
+.label {
+    margin-top: 80px;
+}
+
+.labelName {
+    font-size: 25px;
+    color:red;
+    margin-right: auto;
+}
+
+.textName {
+    border: 1px solid #c8c8c8;
+    font-size: 20px;
+    height: 34px;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.labelPass {
+    font-size: 25px;
+    margin-right: 24px;
+}
+
+.textPass {
+    border: 1px solid #c8c8c8;
+    font-size: 20px;
+    height: 34px;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.loginButton {
+    margin-left: 700px;
+    margin-top: 50px;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 220px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: rgb(149,202,252);
+    background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
+}
+
+.loginButton:hover {
+    background: rgb(117,188,255);
+    background: linear-gradient(270deg, rgba(117,188,255,1) 0%, rgba(62,159,252,1) 100%);
+}
+
+.change-img-anim {
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: changeImage 25s infinite;
+  }
+  
+  @keyframes changeImage {
+    0% {
+      background-image: url('../../img/tumu1.jpg');
+    }
+    10% {
+      background-image: url('../../img/tumu2.jpg');
+    }
+    20% {
+        background-image: url('../../img/tumu3.jpg');
+      }
+    30% {
+        background-image: url('../../img/tumu4.jpg');
+    }
+    40% {
+        background-image: url('../../img/tumu5.jpg');
+      }
+    50% {
+        background-image: url('../../img/tumu6.jpg');
+    }      
+    60% {
+      background-image: url('../../img/tumu7.jpg');
+    }
+    70% {
+        background-image: url('../../img/tumu8.jpg');
+    }
+    80% {
+        background-image: url('../../img/tumu9.jpg');
+    }
+    90% {
+        background-image: url('../../img/tumu10.jpg');
+    }
+    100% {
+        background-image: url('../../img/tumu11.jpg');
+    }
+  }

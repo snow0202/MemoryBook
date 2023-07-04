@@ -6,15 +6,17 @@ import App from './App';
 import { Login } from './Components/Login/Login';
 import { UploadPage } from './Components/UploadPage/UploadPage'
 import { Contact } from './Components/Contact/Contact';
+import cat1 from './img/cat1.jpg'
+import cat2 from './img/cat2.jpg'
+import cat3 from './img/cat3.jpg'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const handleLogin = (email: string, password: string) => {
-  console.log('ログインされたメールアドレス:', email, 'とパスワード:', password);
+const handleLogin = (name: string, password: string) => {
+  console.log('ログインされたメールアドレス:', name, 'とパスワード:', password);
 };
-
 
 root.render(
   <React.StrictMode>

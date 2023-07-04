@@ -1,6 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-export const LoginEvent = () => {
+interface LoginEventProps {
+  className?: string;
+}
+
+export const LoginEvent: React.FC<LoginEventProps> = (props) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -9,7 +13,7 @@ export const LoginEvent = () => {
 
   return (
     <>
-        <button onClick={handleLogin}>ログイン</button>
+        <button className={props.className} onClick={handleLogin}>おもいでにログイン</button>
     </>
   );
 };
