@@ -108,9 +108,9 @@
   }
 
   .errorMsg {
-    color: red;
+    color: #FF0000;
     font-size: 50px;
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 10px;
     border: 1px solid #c8c8c8;
     width: 600px;
