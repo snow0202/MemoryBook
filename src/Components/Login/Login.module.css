@@ -3,9 +3,10 @@
 }
 
 .head { 
-    font-size: 80px;
+    font-size: 90px;
     font-family: serif;
-    color:#003366;
+    font-weight: bold;
+    color: #ffff66;
 }
 
 .label {
@@ -15,13 +16,16 @@
 .labelName {
     font-size: 25px;
     font-family: serif;
-    color:#003366;
-    margin-right: auto;
+    color:#ffff66;
+    font-weight: bold;
 }
 
 .textName {
     border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    box-shadow: 5px 5px 3px #ccc;
     font-size: 20px;
+    font-family: serif;
     height: 34px;
     padding: 0 10px;
     margin: 10px 0;
@@ -31,13 +35,17 @@
 .labelPass {
     font-size: 25px;
     font-family: serif;
-    color:#003366;
+    color:#ffff66;
+    font-weight: bold;
     margin-right: 24px;
 }
 
 .textPass {
     border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    box-shadow: 5px 5px 3px #ccc;
     font-size: 20px;
+    font-family: serif;
     height: 34px;
     padding: 0 10px;
     margin: 10px 0;
@@ -55,7 +63,7 @@
     align-items: center;
     max-width: 220px;
     padding: 10px 25px;
-    color: #FFF;
+    color: #ffff;
     transition: 0.3s ease-in-out;
     font-weight: 600;
     background: rgb(149,202,252);
@@ -74,6 +82,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    opacity: 0.8;
     animation: changeImage 55s infinite;
   }
   
@@ -99,6 +108,11 @@
   }
 
   .errorMsg {
-    color: red;
+    color: #FF0000;
     font-size: 50px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #c8c8c8;
+    width: 600px;
+    margin-left: 700px;
   }

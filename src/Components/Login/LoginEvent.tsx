@@ -19,8 +19,10 @@ export const LoginEvent: React.FC<LoginEventProps> = (props) => {
   const handleLogin = () => {
     if (namePattern.test(props.name) && passPattern.test(props.password)) {
       navigate('/App');
-    } else {
-      setIsError('おなまえかパスワードが間違ってます！')
+    } else if (!namePattern.test(props.name)){
+      setIsError('おなまえが間違うよ！')
+    } else if (!passPattern.test(props.password)){
+      setIsError('パスワードが間違うよ！')
     }
   };
   
