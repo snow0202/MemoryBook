@@ -5,8 +5,7 @@
 }
 
 body {
-  background-color: gray;
-  height: 100vh;
+  background-color: white;
 }
 
 body,
@@ -45,7 +44,7 @@ button {
   justify-content: flex-end;
   padding: 2rem;
   z-index: 999;
-  background-color: white;
+  background: linear-gradient(to right, #191970, #ffc0cb);
 }
 
 .toggleButon {
