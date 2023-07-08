@@ -17,7 +17,7 @@ return (
               className={Style.textName} 
               type="name" 
               value={name} 
-              placeholder="福住 紬星"
+              placeholder="山田花子"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value)
               }}

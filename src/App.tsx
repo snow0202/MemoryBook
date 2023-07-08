@@ -1,12 +1,12 @@
 import React from 'react';
 import Style from './App.module.css'
-import { Page } from './Components/Book/Page';
+import { Album } from './Components/Book/Album';
 
 const App: React.FC = () => {
   return (
     <>
         <div className={Style.App}>
-          <Page />
+          <Album />
         </div>
     </>
   );
