@@ -3,19 +3,41 @@
 }
 
 .head { 
+    text-align: center;
     font-size: 90px;
-    font-family: serif;
+    font-family: 'Marker Felt', cursive;
     font-weight: bold;
     color: #ffff66;
+    animation-name: fadeInAnime;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    padding: 5px; /* クレヨンの太さを調整 */
+    border-radius: 5px; /* クレヨンの先端を丸くする */
 }
 
 .label {
     margin-top: 100px;
+    text-align: center;
+    animation-name: fadeInAnime;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime{
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
 }
 
 .labelName {
     font-size: 25px;
-    font-family: serif;
+    font-family: 'Marker Felt', cursive;
     color:#ffff66;
     font-weight: bold;
 }
@@ -25,7 +47,7 @@
     border-radius: 3px;
     box-shadow: 5px 5px 3px #ccc;
     font-size: 20px;
-    font-family: serif;
+    font-family: 'Marker Felt', cursive;
     height: 34px;
     padding: 0 10px;
     margin: 10px 0;
@@ -34,7 +56,7 @@
 
 .labelPass {
     font-size: 25px;
-    font-family: serif;
+    font-family: 'Marker Felt', cursive;
     color:#ffff66;
     font-weight: bold;
     margin-right: 24px;
@@ -45,7 +67,7 @@
     border-radius: 3px;
     box-shadow: 5px 5px 3px #ccc;
     font-size: 20px;
-    font-family: serif;
+    font-family: 'Marker Felt', cursive;
     height: 34px;
     padding: 0 10px;
     margin: 10px 0;
@@ -53,12 +75,10 @@
 }
 
 .loginButton {
-    font-family: serif;
-    margin-left: 900px;
+    text-align: center;
+    font-family: 'Marker Felt', cursive;
     margin-top: 50px;
-    border-radius: 3px;
-    position: relative;
-    display: flex;
+    border-radius: 5px;
     justify-content: space-around;
     align-items: center;
     max-width: 220px;
@@ -110,9 +130,27 @@
   .errorMsg {
     color: #FF0000;
     font-size: 50px;
+    font-family: 'Marker Felt', cursive;
     background-color: #FFFFFF;
+    opacity: 0.8;
     border-radius: 10px;
     border: 1px solid #c8c8c8;
     width: 600px;
-    margin-left: 700px;
+    margin-left: 670px;
+    animation:fwari ease-in-out 2s infinite alternate;
+    -webkit-animation:fwari ease-in-out 2s infinite alternate;
+    -moz-animation:fwari ease-in-out 2s infinite alternate;
+  }
+  @keyframes fwari{
+    0%   { transform:translate(0%, 0%); }
+    100% { transform:translate(0%, -30px); }
+  }
+  @-webkit-keyframes fwari{
+    0%   { -webkit-transform:translate(0%, 0%); }
+    100% { -webkit-transform:translate(0%, -30px); }
+  }
+  
+  @-moz-keyframes fwari{
+    0%   { -moz-transform:translate(0%, 0%); }
+    100% { -moz-transform:translate(0%, -30px); }
   }

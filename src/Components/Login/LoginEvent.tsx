@@ -20,9 +20,9 @@ export const LoginEvent: React.FC<LoginEventProps> = (props) => {
     if (namePattern.test(props.name) && passPattern.test(props.password)) {
       navigate('/App');
     } else if (!namePattern.test(props.name)){
-      setIsError('おなまえが間違うよ！')
+      setIsError('おなまえ が違うよ！')
     } else if (!passPattern.test(props.password)){
-      setIsError('パスワードが間違うよ！')
+      setIsError('パスワード が違うよ！')
     }
   };
   
@@ -33,7 +33,7 @@ export const LoginEvent: React.FC<LoginEventProps> = (props) => {
           disabled={props.isLogin}
           onClick={handleLogin}
         >
-          おもいでにログイン
+          おもいで にログイン
         </button>
         {isError && <p className={Style.errorMsg}>{isError}</p>}
     </>

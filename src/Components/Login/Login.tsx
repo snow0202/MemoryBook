@@ -17,6 +17,7 @@ return (
               className={Style.textName} 
               type="name" 
               value={name} 
+              placeholder="福住 紬星"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value)
               }}
@@ -29,6 +30,7 @@ return (
                 className={Style.textPass} 
                 type="password" 
                 value={password} 
+                placeholder="●●●●"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setPassword(e.target.value)
                 }}
