@@ -1,33 +1,33 @@
-*,
-*::before,
-*::after {
+:global(*),
+:global(::before),
+:global(::after) {
   box-sizing: border-box;
 }
 
-body {
+:global(body) {
   background-color: white;
 }
 
-body,
-header,
-ul,
-li,
-div {
+:global(body),
+:global(header),
+:global(ul),
+:global(li),
+:global(div) {
   display: block;
   max-width: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 24px;
 }
 
-ul,
-li {
+:global(ul),
+:global(li) {
   list-style: none;
 }
 
-button {
+:global(button) {
   appearance: none;
   border: none;
   background: transparent;
@@ -40,17 +40,19 @@ button {
 
 .header {
   position: relative;
+  height: 78px;
   display: flex;
   justify-content: flex-end;
-  padding: 2rem;
+  padding: 10px;
   z-index: 999;
-  background: linear-gradient(to right, #191970, #ffc0cb);
+  background: linear-gradient(to right, #4169e1, #ffc0cb);
 }
 
 .toggleButon {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 55px;
+  height: 55;
+  margin-right: 30px;
   overflow: hidden;
   z-index: 2;
 }
@@ -68,19 +70,19 @@ button {
   background-color: black;
 }
 
-.line-1 {
+.line1 {
   transform: translate(0, -10px);
 }
 
-.line-2 {
+.line2 {
   transform: translate(0, 10px);
 }
 
-.toggleButon[aria-expanded="true"] > .line-1 {
+.toggleButon[aria-expanded="true"] > .line1 {
   transform: translate(0, 0) rotate(-45deg);
 }
 
-.toggleButon[aria-expanded="true"] > .line-2 {
+.toggleButon[aria-expanded="true"] > .line2 {
   transform: translate(0, 0) rotate(45deg);
 }
 
@@ -113,3 +115,18 @@ button {
 .navigation > ul > li {
   text-align: center;
 }
+
+.title {
+  color: #2f4f4f;
+  font-family: monospace; 
+  width: 16ch;
+  border-right: .08em solid;
+  overflow: hidden;
+  font-size: 20px;
+  white-space: nowrap;
+  animation: typing 5s steps(11, end), caret .5s step-end infinite;
+  margin-right: 780px;
+}
+
+@keyframes typing { from { width: 0; } }
+@keyframes caret { 50% { border-color: transparent; } }

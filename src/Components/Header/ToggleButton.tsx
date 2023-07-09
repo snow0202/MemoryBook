@@ -1,5 +1,5 @@
 import { FC, MouseEventHandler } from "react";
-import "./styles.css";
+import Style from "./Head.module.css";
 
 type Props = {
   open: boolean;
@@ -16,10 +16,10 @@ export const ToggleButton: FC<Props> = ({ open, controls, label, onClick }) => {
       aria-expanded={open}
       aria-label={label}
       onClick={onClick}
-      className="toggleButon"
+      className={Style.toggleButon}
     >
-      <span className="line-1"></span>
-      <span className="line-2"></span>
+      <span className={Style.line1}></span>
+      <span className={Style.line2}></span>
     </button>
   );
 };

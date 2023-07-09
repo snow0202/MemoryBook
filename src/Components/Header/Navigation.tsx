@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from 'react-router-dom';
-import "./styles.css";
+import Style from "./Head.module.css";
 
 type Props = {
   open: boolean;
@@ -9,7 +9,7 @@ type Props = {
 
 export const Navigation: FC<Props> = ({ open, id }) => {
   return (
-    <nav id={id} aria-hidden={!open} className="navigation">
+    <nav id={id} aria-hidden={!open} className={Style.navigation}>
       <ul>
         <li>
           <Link to="/UploadPage">おもいでを増やす</Link>

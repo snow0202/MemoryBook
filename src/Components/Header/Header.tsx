@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { ToggleButton } from "./ToggleButton";
 import { Navigation } from "./Navigation";
-import "./styles.css";
+import Style from "./Head.module.css";
 
 export const Header: FC = () => {
   const [open, setOpen] = useState(false);
@@ -10,7 +10,8 @@ export const Header: FC = () => {
   };
 
   return (
-    <header className="header">
+    <header className={Style.header}>
+      <p className={Style.title}>つむたのおもいで</p>
       <ToggleButton
         open={open}
         controls="navigation"
