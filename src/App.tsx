@@ -1,11 +1,13 @@
 import React from 'react';
-import Style from './App.module.css'
-import { Album } from './Components/Book/Album';
+import Style from './App.module.css';
+import { Header } from './Components/Header/Header';
+import { Album } from './Components/Album/Album';
 
 const App: React.FC = () => {
   return (
     <>
-        <div className={Style.App}>
+        <Header />
+        <div className={Style.body}>
           <Album />
         </div>
     </>
