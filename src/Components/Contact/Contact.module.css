@@ -128,8 +128,10 @@
   .formgroup-active {
     background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
   }
-  
-  .formgroup-error {
+
+  .formgroupError {
     background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
-    color: red;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #ff0000;
   }

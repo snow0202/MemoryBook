@@ -10,6 +10,7 @@ export const Contact: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+
     if (name === "name") {
       setName(value);
       setNameError(false);
@@ -24,8 +25,10 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     let stopSubmit = false;
+    const shisuke:string = '福住静芳';
+    const tumu:string = '福住紬星';
 
-    if (name.trim() === "") {
+    if (name.trim() === "" || name !== shisuke || name !== tumu) {
       setNameError(true);
       stopSubmit = true;
     }
@@ -74,7 +77,7 @@ export const Contact: React.FC = () => {
         </div>
 
         <div className={Style.formgroup} id="message-form">
-          <label htmlFor="message">お困りごと*</label>
+          <label htmlFor="message">お困りごと</label>
           <textarea
             id="message"
             name="message"
