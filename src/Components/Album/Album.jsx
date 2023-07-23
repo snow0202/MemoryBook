@@ -10,6 +10,8 @@ import Tsumu7 from '../../img/IMG_1332.JPG';
 import Tsumu8 from '../../img/PXL_20230617_033711945.jpg';
 import Tsumu9 from '../../img/IMG_1494.JPG';
 import Tsumu10 from '../../img/IMG_1606.JPG';
+import Tsumu11 from '../../img/PXL_20230721_020838287.jpg';
+import Tsumu12 from '../../img/PXL_20230714_055350353.MP.jpg';
 
 export const Album = () => {  
   return (
@@ -102,6 +104,20 @@ export const Album = () => {
             <p className={Style.date}> 2022・10・31</p>
             <p className={Style.text}>ハロウィンパーティ🎃</p>
             <footer className={Style.footer}>10</footer>
+          </div>
+          {/* 11ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu11} className={Style.photo} />
+            <p className={Style.date}> 2023・7・21</p>
+            <p className={Style.text}>お魚さんみつけた！</p>
+            <footer className={Style.footer}>11</footer>
+          </div>
+          {/* 11ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu12} className={Style.photo} />
+            <p className={Style.date}> 2023・7・14</p>
+            <p className={Style.text}>シャッキーン</p>
+            <footer className={Style.footer}>12</footer>
           </div>
         </HTMLFlipBook>
       </div>
