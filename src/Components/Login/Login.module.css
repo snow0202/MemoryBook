@@ -129,6 +129,7 @@
   }
 
   .errorMsg {
+    position:relative;
     color: #FF0000;
     font-size: 50px;
     font-family: 'Marker Felt', cursive;
@@ -136,8 +137,8 @@
     opacity: 0.8;
     border-radius: 10px;
     border: 1px solid #c8c8c8;
-    width: 600px;
-    margin-left: 670px;
+    width: 650px;
+    margin-left: 30%;
     animation:fwari ease-in-out 2s infinite alternate;
     -webkit-animation:fwari ease-in-out 2s infinite alternate;
     -moz-animation:fwari ease-in-out 2s infinite alternate;

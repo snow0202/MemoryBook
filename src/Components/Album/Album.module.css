@@ -3,6 +3,7 @@
 }
 
 .container {
+    position:relative;
     text-align: center;
 }
 
@@ -15,6 +16,7 @@
 }
 
 .index {
+    position:relative;
     background-image: url('../../img/a523a1326973cf0c26358a4b3ba2d4af_t.jpeg');
     background-size: 100%;
     border: 1px solid #f5f5f5;
@@ -22,11 +24,11 @@
 }
 
 .title {
+    position:relative;
+    top: 30%;
     background-color: #fff;
-    width: 490px;
+    width: 574px;
     height: 90px;
-    margin-left: 100px;
-    margin-top: 320px;
     opacity: 0.9;
     font-size: 60px;
     font-family: 'Marker Felt', cursive;
@@ -36,6 +38,7 @@
 }
 
 .page {
+    position:relative;
     background-color: #ffefd5;
     border: 1px solid #f5f5f5;
     box-shadow: 5px 5px 5px -2px rgba(3, 0, 0, 1), -2px 5px 5px -2px rgba(3, 0, 0, 1);
@@ -49,6 +52,7 @@
 }
 
 .photo {
+    position:relative;
     margin-top: 15px;
     width: 550px;
     height: 500px;
@@ -57,12 +61,14 @@
 }
 
 .text {
+    position:relative;
     font-size: 25px;
     font-family: 'Marker Felt', cursive;
     text-align: center;
 }
 
 .footer {
+    position:relative;
     width: 600px;
     margin-top: 160px;
     margin-left: 55px;

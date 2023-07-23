@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDropzone, FileWithPath } from 'react-dropzone';
+import Style from "./UploadPage.module.css";
 
 interface UploadedFile {
   file: FileWithPath;
@@ -25,7 +26,7 @@ export const UploadPage: React.FC = () => {
         <input {...getInputProps()} />
         <p>思い出をドラッグ＆ドロップしてね</p>
       </div>
-      <div>
+      <div className={Style.photo}>
         {selectedFiles.map((file) => (
           <div key={file.file.name}>
             <img src={file.preview} alt="Uploaded" />
