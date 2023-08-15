@@ -11,13 +11,12 @@ interface UploadedFile {
 
 export const UploadPage: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<UploadedFile[]>([]);
-  const [isSelectionMode, setIsSelectionMode] = useState(false);
+  const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
 
   const handleFileSelect = (files: FileWithPath[]) => {
     const newFiles: UploadedFile[] = [];
-
+    // 重複チェック
     files.forEach((file) => {
-      // 重複チェック
       if (!selectedFiles.some((selectedFile) => selectedFile.file.name === file.name)) {
         newFiles.push({
           file,
@@ -34,25 +33,28 @@ export const UploadPage: React.FC = () => {
       alert('これ以上アップロードできません！');
       return;
     }
-
     setSelectedFiles((prevSelectedFiles) => [...prevSelectedFiles, ...newFiles]);
-  };
-
-  const toggleFileSelection = (index: number) => {
-    if (isSelectionMode) {
-      setSelectedFiles((prevSelectedFiles) => {
-        const newSelectedFiles = [...prevSelectedFiles];
-        newSelectedFiles[index].selected = !newSelectedFiles[index].selected;
-        return newSelectedFiles;
-      });
-    }
   };
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop: handleFileSelect });
 
   const handleSelectButtonClick = () => {
-    setIsSelectionMode(true);
+    if (selectedIndices.length === 0) {
+      alert('どれか一つ以上選択してね！');
+      return;
+    }
     //モーダルでプレビュー画面を出して選択された画像を引用し表示する
+  };
+
+  // 個々の画像に対してboder色を効かせるための関数
+  const handleSelect = (index: number) => {
+    setSelectedIndices((prevSelectedIndices) => {
+      if (prevSelectedIndices.includes(index)) {
+        return prevSelectedIndices.filter((i) => i !== index);
+      } else {
+        return [...prevSelectedIndices, index];
+      }
+    });
   };
 
   return (
@@ -65,13 +67,13 @@ export const UploadPage: React.FC = () => {
         {selectedFiles.map((file, index) => (
           <div
             key={file.file.name}
-            className={Style.photo}
-            onClick={() => toggleFileSelection(index)}
+            className={`${Style.photo} ${selectedIndices.includes(index) ? Style.selectedBorder : ''}`}
+            onClick={() => handleSelect(index)}
           >
             {file.file.type.startsWith('image/') ? (
               <img src={file.preview} alt="Uploaded" />
             ) : file.file.type === 'video/mp4' ? (
-              <video controls className={Style.video}>
+              <video controls className={Style.photo}>
                 <source src={file.preview} type="video/mp4" />
               </video>
             ) : null}

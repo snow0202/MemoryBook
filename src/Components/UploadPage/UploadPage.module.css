@@ -57,28 +57,9 @@
     margin: 0; /* マージンをゼロに設定 */
 }
 
-/* .video スタイルを修正 */
-.video {
-    width: 360px;
-    height: 360px;
-    margin: 10px;
-    flex: 0 0 calc(25% - 16px);
-    box-sizing: border-box;
-    max-width: 360px;
-    margin: 0;
-}
-
 /* モバイル */
 @media screen and (max-width: 767px) {
     .photo {
-        width: 100px;
-        height: 100px;
-        margin: 5px;
-        max-width: 100px;
-        margin: 0;
-    }
-
-    .video {
         width: 100px;
         height: 100px;
         margin: 5px;
@@ -96,20 +77,17 @@
         max-width: 290px;
         margin: 0;
     }
-
-    .video {
-        width: 290px;
-        height: 290px;
-        margin: 10px;
-        max-width: 290px;
-        margin: 0;
-    }
 }
 
 .photo img {
     width: 100%;
     height: 100%;
 }
+
+.photo video {
+    width: 100%;
+    height: 100%;
+  }
 
 .selectButton{
     position: fixed;
@@ -147,4 +125,7 @@
 .selectButton:hover{
     background-color: #FFE2B2;
 }
-  
+
+.selectedBorder {
+    border: 4px solid #00ff00;
+  }
