@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from '../../Common/Button/Button';
 import Style from "./Contact.module.css";
 
 export const Contact: React.FC = () => {
@@ -87,7 +88,13 @@ export const Contact: React.FC = () => {
           ></textarea>
         </div>
 
-        <input type="submit" value="送信" className={Style.submitButton} />
+        <Button 
+          className={Style.submitButton} 
+          onClick={() => {
+            //メール送信処理
+          }}>
+          送信
+        </Button>
       </form>
     </div>
   );

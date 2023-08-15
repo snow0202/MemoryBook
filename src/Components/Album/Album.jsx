@@ -12,22 +12,26 @@ import Tsumu9 from '../../img/IMG_1494.JPG';
 import Tsumu10 from '../../img/IMG_1606.JPG';
 import Tsumu11 from '../../img/PXL_20230721_020838287.jpg';
 import Tsumu12 from '../../img/PXL_20230714_055350353.MP.jpg';
+import Tsumu13 from '../../img/PXL_20230721_035057908.MP.jpg';
+import Tsumu14 from '../../img/PXL_20230811_030717419.jpg';
+import Tsumu15 from '../../img/PXL_20230811_075309389.jpg';
+import Tsumu16 from '../../img/PXL_20230721_020847039.TS.mp4';
 
-export const Album = () => {  
+export const Album = () => {
   return (
     <div className={Style.whole}>
       <div className={Style.container}>
-        <HTMLFlipBook 
-            width={650}
-            height={750}
-            size="stretch"
-            minWidth={315}
-            maxWidth={1000}
-            minHeight={400}
-            maxHeight={1533}
-            startPage={0}
-            maxShadowOpacity={0.4}
-            mobileScrollSupport={true}
+        <HTMLFlipBook
+          width={650}
+          height={750}
+          size="stretch"
+          minWidth={315}
+          maxWidth={1000}
+          minHeight={400}
+          maxHeight={1533}
+          startPage={0}
+          maxShadowOpacity={0.4}
+          mobileScrollSupport={true}
         >
           {/* ページのトップ */}
           <div className={Style.top} />
@@ -112,12 +116,42 @@ export const Album = () => {
             <p className={Style.text}>お魚さんみつけた！</p>
             <footer className={Style.footer}>11</footer>
           </div>
-          {/* 11ページ目 */}
+          {/* 12ページ目 */}
           <div className={Style.page}>
             <img src={Tsumu12} className={Style.photo} />
             <p className={Style.date}> 2023・7・14</p>
             <p className={Style.text}>シャッキーン</p>
             <footer className={Style.footer}>12</footer>
+          </div>
+          {/* 13ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu13} className={Style.photo} />
+            <p className={Style.date}> 2023・7・21</p>
+            <p className={Style.text}>つかまり立ちができたよ！</p>
+            <footer className={Style.footer}>13</footer>
+          </div>
+          {/* 14ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu14} className={Style.photo} />
+            <p className={Style.date}> 2023・8・11</p>
+            <p className={Style.text}>薔薇の風船もらったよ！</p>
+            <footer className={Style.footer}>14</footer>
+          </div>
+          {/* 15ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu15} className={Style.photo} />
+            <p className={Style.date}> 2023・8・11</p>
+            <p className={Style.text}>アンパンマンあげる♡</p>
+            <footer className={Style.footer}>15</footer>
+          </div>
+          {/* 16ページ目 */}
+          <div className={Style.page}>
+            <video controls className={Style.photo}>
+              <source src={Tsumu16} type="video/mp4" />
+            </video>
+            <p className={Style.date}> 2023・7・21</p>
+            <p className={Style.text}>喋るつむぎさん</p>
+            <footer className={Style.footer}>16</footer>
           </div>
         </HTMLFlipBook>
       </div>

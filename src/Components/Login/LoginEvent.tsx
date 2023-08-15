@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Style from './Login.module.css';
 import React, { useState } from 'react';
+import { Button } from '../../Common/Button/Button';
 
 interface LoginEventProps {
   isLogin: boolean;
@@ -30,13 +31,13 @@ export const LoginEvent: React.FC<LoginEventProps> = (props) => {
   
   return (
     <>
-        <button 
+        <Button 
           className={props.className} 
           disabled={props.isLogin}
           onClick={handleLogin}
         >
           おもいで にログイン
-        </button>
+        </Button>
         {isError && <p className={Style.errorMsg}>{isError}</p>}
     </>
   );

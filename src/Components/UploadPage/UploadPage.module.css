@@ -1,4 +1,150 @@
-.photo {
-    width: 100px;
-    height: 50px;
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #faf0e6;
+    box-sizing: border-box;
 }
+
+.plus {
+    background-image: url('./puls.svg');
+    background-repeat: no-repeat;
+    background-position: 34%;
+    background-size: 28px 28px;
+    cursor: pointer;
+}
+
+/* モバイル */
+@media screen and (max-width: 767px) {
+    .plus {
+        background-position: 30%;
+    }
+}
+
+/* ノートパソコン */
+@media screen and (max-width: 1537px) {
+    .plus {
+        background-position: 31%;
+    }
+}
+
+.plus:hover {
+    background-size: 40px 40px;
+    opacity: 0.3;
+}
+
+.drag {
+    margin: 0; /* これがないと画面上に余白ができる */
+    text-align: center;
+    font-size: 30px;
+    color: #da70d6;
+}
+
+.photo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 画像間の余白を設定 */
+    justify-content: flex-start; /* コンテナの左揃え */
+}
+
+/* .photo スタイルを修正 */
+.photo {
+    width: 360px;
+    height: 360px;
+    margin: 10px;
+    flex: 0 0 calc(25% - 16px); /* 25%の幅に設定し、余白を考慮 */
+    box-sizing: border-box;
+    max-width: 360px; /* 画像の最大幅を設定 */
+    margin: 0; /* マージンをゼロに設定 */
+}
+
+/* .video スタイルを修正 */
+.video {
+    width: 360px;
+    height: 360px;
+    margin: 10px;
+    flex: 0 0 calc(25% - 16px);
+    box-sizing: border-box;
+    max-width: 360px;
+    margin: 0;
+}
+
+/* モバイル */
+@media screen and (max-width: 767px) {
+    .photo {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        max-width: 100px;
+        margin: 0;
+    }
+
+    .video {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        max-width: 100px;
+        margin: 0;
+    }
+}
+
+/* ノートパソコン */
+@media screen and (max-width: 1537px) {
+    .photo {
+        width: 290px;
+        height: 290px;
+        margin: 10px;
+        max-width: 290px;
+        margin: 0;
+    }
+
+    .video {
+        width: 290px;
+        height: 290px;
+        margin: 10px;
+        max-width: 290px;
+        margin: 0;
+    }
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.selectButton{
+    position: fixed;
+    top: 800px;
+    right: 800px;
+    background-color: #F90;
+    color: white;
+    height: 90px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Sniglet', cursive;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+  /* モバイル */
+@media screen and (max-width: 767px) {
+    .selectButton{
+        top: 50px;
+        right: 50px;
+    }
+}
+
+/* ノートパソコン */
+@media screen and (max-width: 1537px) {
+    .selectButton{
+        top: 680px;
+        right: 650px;
+    }
+}
+
+.selectButton:hover{
+    background-color: #FFE2B2;
+}
+  

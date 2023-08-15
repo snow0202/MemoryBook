@@ -1,4 +1,5 @@
 import { FC, MouseEventHandler } from "react";
+import { Button } from '../../Common/Button/Button';
 import Style from "./Head.module.css";
 
 type Props = {
@@ -8,18 +9,17 @@ type Props = {
   label: string;
 };
 
-export const ToggleButton: FC<Props> = ({ open, controls, label, onClick }) => {
+export const ToggleButton: FC<Props> = (props) => {
   return (
-    <button
-      type="button"
-      aria-controls={controls}
-      aria-expanded={open}
-      aria-label={label}
-      onClick={onClick}
+    <Button
+      aria-controls={props.controls}
+      aria-expanded={props.open}
+      aria-label={props.label}
+      onClick={props.onClick}
       className={Style.toggleButon}
     >
       <span className={Style.line1}></span>
       <span className={Style.line2}></span>
-    </button>
+    </Button>
   );
 };
