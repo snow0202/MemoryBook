@@ -17,6 +17,7 @@ import Tsumu14 from '../../img/PXL_20230811_030717419.jpg';
 import Tsumu15 from '../../img/PXL_20230811_075309389.jpg';
 import Tsumu16 from '../../img/PXL_20230721_020847039.TS.mp4';
 
+// メインアルバム画面
 export const Album = () => {
   return (
     <div className={Style.whole}>

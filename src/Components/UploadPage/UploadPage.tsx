@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDropzone, FileWithPath } from 'react-dropzone';
 import { Button } from '../../Common/Button/Button';
+import { Previews } from './Previews/Previews';
+import Modal from 'react-modal';
 import Style from './UploadPage.module.css';
 
 interface UploadedFile {
@@ -9,13 +11,14 @@ interface UploadedFile {
   selected: boolean;
 }
 
+// 画像投稿画面
 export const UploadPage: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<UploadedFile[]>([]);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleFileSelect = (files: FileWithPath[]) => {
     const newFiles: UploadedFile[] = [];
-    // 重複チェック
     files.forEach((file) => {
       if (!selectedFiles.some((selectedFile) => selectedFile.file.name === file.name)) {
         newFiles.push({
@@ -36,14 +39,18 @@ export const UploadPage: React.FC = () => {
     setSelectedFiles((prevSelectedFiles) => [...prevSelectedFiles, ...newFiles]);
   };
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop: handleFileSelect });
-
+  // ボタン押下後の処理
   const handleSelectButtonClick = () => {
     if (selectedIndices.length === 0) {
       alert('どれか一つ以上選択してね！');
       return;
     }
-    //モーダルでプレビュー画面を出して選択された画像を引用し表示する
+    setIsModalOpen(true);
+  };
+
+  // モーダル閉会処理
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   // 個々の画像に対してboder色を効かせるための関数
@@ -56,6 +63,8 @@ export const UploadPage: React.FC = () => {
       }
     });
   };
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop: handleFileSelect });
 
   return (
     <div className={Style.container}>
@@ -87,6 +96,15 @@ export const UploadPage: React.FC = () => {
         >
           アルバムに載せる
         </Button>
+      )}
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          // className={Style.modal}
+        >
+          <Previews selectedFiles={selectedFiles.filter((_, index) => selectedIndices.includes(index))} />
+        </Modal>
       )}
     </div>
   );

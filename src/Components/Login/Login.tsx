@@ -1,11 +1,12 @@
-import { useState } from "react";
-import Style from './Login.module.css';
+import React, { useState } from "react";
 import { LoginEvent } from "./LoginEvent";
+import Style from './Login.module.css';
 
+// ログイン画面
 export const Login: React.FC = () => {
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLogin, setIsLogin] = useState(false);
+  const [name, setName] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isLogin, setIsLogin] = useState<boolean>(false);
 
 return (
     <div className={Style['change-img-anim']}>

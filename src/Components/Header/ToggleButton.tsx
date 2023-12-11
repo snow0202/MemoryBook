@@ -1,15 +1,16 @@
-import { FC, MouseEventHandler } from "react";
+import React from "react";
 import { Button } from '../../Common/Button/Button';
 import Style from "./Head.module.css";
 
-type Props = {
+interface ToggleButtonProps {
   open: boolean;
-  onClick: MouseEventHandler;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   controls: string;
   label: string;
 };
 
-export const ToggleButton: FC<Props> = (props) => {
+// ハンバーガーメニューボタンコンポーネント
+export const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
   return (
     <Button
       aria-controls={props.controls}

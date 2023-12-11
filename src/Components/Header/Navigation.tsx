@@ -1,15 +1,16 @@
-import { FC } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import Style from "./Head.module.css";
 
-type Props = {
+interface NavigationProps {
   open: boolean;
   id: string;
-};
+}
 
-export const Navigation: FC<Props> = ({ open, id }) => {
+// ハンバーガーメニューコンポーネント
+export const Navigation: React.FC<NavigationProps> = (props) => {
   return (
-    <nav id={id} aria-hidden={!open} className={Style.navigation}>
+    <nav id={props.id} aria-hidden={!props.open} className={Style.navigation}>
       <ul>
         <li>
           <Link to="/UploadPage">おもいでを増やす</Link>

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Button } from '../../Common/Button/Button';
 import Style from "./Contact.module.css";
 
+// 問い合わせ画面
 export const Contact: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [nameError, setNameError] = useState<boolean>(false);
+  const [emailError, setEmailError] = useState<boolean>(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -90,6 +91,7 @@ export const Contact: React.FC = () => {
 
         <Button 
           className={Style.submitButton} 
+          tabIndex={0}
           onClick={() => {
             //メール送信処理
           }}>
