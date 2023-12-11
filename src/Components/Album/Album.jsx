@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import Style from './Album.module.css';
 import Tsumu1 from '../../img/IMG_1198.JPG';
@@ -16,8 +17,14 @@ import Tsumu13 from '../../img/PXL_20230721_035057908.MP.jpg';
 import Tsumu14 from '../../img/PXL_20230811_030717419.jpg';
 import Tsumu15 from '../../img/PXL_20230811_075309389.jpg';
 import Tsumu16 from '../../img/PXL_20230721_020847039.TS.mp4';
+import Tsumu17 from '../../img/PXL_20230902_024347055.jpg';
+import Tsumu18 from '../../img/PXL_20230916_071312234.TS.mp4';
+import Tsumu19 from '../../img/PXL_20231026_031709635.jpg';
+import Tsumu20 from '../../img/PXL_20231026_055600700.jpg';
+import Tsumu21 from '../../img/PXL_20231111_051859367.TS.mp4';
+import Tsumu22 from '../../img/PXL_20231125_020612324.TS.mp4';
 
-// メインアルバム画面
+// メインアルバムコンポーネント
 export const Album = () => {
   return (
     <div className={Style.whole}>
@@ -153,6 +160,54 @@ export const Album = () => {
             <p className={Style.date}> 2023・7・21</p>
             <p className={Style.text}>喋るつむぎさん</p>
             <footer className={Style.footer}>16</footer>
+          </div>
+          {/* 17ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu17} className={Style.photo} />
+            <p className={Style.date}> 2023・9・2</p>
+            <p className={Style.text}>プール遊び</p>
+            <footer className={Style.footer}>17</footer>
+          </div>
+          {/* 18ページ目 */}
+          <div className={Style.page}>
+            <video controls className={Style.photo}>
+              <source src={Tsumu18} type="video/mp4" />
+            </video>
+            <p className={Style.date}> 2023・9・18</p>
+            <p className={Style.text}>1歳なった</p>
+            <footer className={Style.footer}>18</footer>
+          </div>
+          {/* 19ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu19} className={Style.photo} />
+            <p className={Style.date}> 2023・10・26</p>
+            <p className={Style.text}>初ディズニー</p>
+            <footer className={Style.footer}>19</footer>
+          </div>
+          {/* 20ページ目 */}
+          <div className={Style.page}>
+            <img src={Tsumu20} className={Style.photo} />
+            <p className={Style.date}> 2023・10・26</p>
+            <p className={Style.text}>シンデレラ城</p>
+            <footer className={Style.footer}>20</footer>
+          </div>
+          {/* 21ページ目 */}
+          <div className={Style.page}>
+            <video controls className={Style.photo}>
+              <source src={Tsumu21} type="video/mp4" />
+            </video>
+            <p className={Style.date}> 2023・11・11</p>
+            <p className={Style.text}>つむぎが立った！！！</p>
+            <footer className={Style.footer}>21</footer>
+          </div>
+          {/* 22ページ目 */}
+          <div className={Style.page}>
+            <video controls className={Style.photo}>
+              <source src={Tsumu22} type="video/mp4" />
+            </video>
+            <p className={Style.date}> 2023・11・25</p>
+            <p className={Style.text}>ポテト食べない</p>
+            <footer className={Style.footer}>22</footer>
           </div>
         </HTMLFlipBook>
       </div>

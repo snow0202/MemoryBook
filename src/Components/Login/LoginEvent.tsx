@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../Common/Button/Button';
 import Style from './Login.module.css';
@@ -13,11 +13,12 @@ interface LoginEventProps {
 // ログイン認証コンポーネント
 export const LoginEvent: React.FC<LoginEventProps> = (props) => {
   const navigate = useNavigate();
-  const kohkun:string = '高橋宏典';
-  const shisuke:string = '福住静芳';
-  const tumu:string = '福住紬星';
   const passPattern: RegExp = /^[0][6][2][3]/;
   const [isError, setIsError] = useState<string>('');
+
+  const [kohkun, shisuke, tumu] = useMemo(() => {
+    return ['高橋宏典', '福住静芳', '福住紬星'];
+  }, []);
 
   // なまえとパスワードのテキスト判定処理
   const handleLogin = () => {
