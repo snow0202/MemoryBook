@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Button } from '../../Common/Button/Button';
 import Style from "./Head.module.css";
 
@@ -10,7 +10,7 @@ interface ToggleButtonProps {
 };
 
 // ハンバーガーメニューボタンコンポーネント
-export const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
+export const ToggleButton: FC<ToggleButtonProps> = (props) => {
   return (
     <Button
       aria-controls={props.controls}

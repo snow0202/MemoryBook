@@ -1,5 +1,4 @@
 .body {
   width: 75%;
-  margin-top: 8px;
-  margin-left: 250px;
+  margin: 8px auto 0;
 }

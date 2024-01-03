@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Link } from 'react-router-dom';
 import Style from "./Head.module.css";
 
@@ -8,7 +8,7 @@ interface NavigationProps {
 }
 
 // ハンバーガーメニューコンポーネント
-export const Navigation: React.FC<NavigationProps> = (props) => {
+export const Navigation: FC<NavigationProps> = (props) => {
   return (
     <nav id={props.id} aria-hidden={!props.open} className={Style.navigation}>
       <ul>

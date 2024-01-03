@@ -35,14 +35,14 @@
     }
 }
 
-.labelName {
+.label {
     font-size: 25px;
     font-family: 'Marker Felt', cursive;
     color:#ffff66;
     font-weight: bold;
 }
 
-.textName {
+.text {
     border: 1px solid #c8c8c8;
     border-radius: 3px;
     box-shadow: 5px 5px 3px #ccc;
@@ -55,23 +55,7 @@
 }
 
 .labelPass {
-    font-size: 25px;
-    font-family: 'Marker Felt', cursive;
-    color:#ffff66;
-    font-weight: bold;
     margin-right: 24px;
-}
-
-.textPass {
-    border: 1px solid #c8c8c8;
-    border-radius: 3px;
-    box-shadow: 5px 5px 3px #ccc;
-    font-size: 20px;
-    font-family: 'Marker Felt', cursive;
-    height: 34px;
-    padding: 0 10px;
-    margin: 10px 0;
-    cursor: pointer;
 }
 
 .loginButton {
@@ -89,6 +73,10 @@
     background: rgb(149,202,252);
     background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
     box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.35);
+}
+
+.loginButton:focus {
+  border: thick double #32a1ce;
 }
 
 .loginButton:hover {
@@ -112,7 +100,7 @@
       background-image: url('../../img/tumu1.jpg');
     }
     20% {
-        background-image: url('../../img/tumu4.jpg');
+        background-image: url('../../img/tumu13.jpg');
       }
     40% {
         background-image: url('../../img/tumu6.jpg');
@@ -121,10 +109,10 @@
       background-image: url('../../img/tumu7.jpg');
     }
     80% {
-        background-image: url('../../img/tumu9.jpg');
+        background-image: url('../../img/tumu14.jpg');
     }
     100% {
-        background-image: url('../../img/tumu11.jpg');
+        background-image: url('../../img/tumu12.jpg');
     }
   }
 

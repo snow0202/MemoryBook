@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from "react";
 import HTMLFlipBook from 'react-pageflip';
 import Style from './Previews.module.css';
 
@@ -13,7 +13,7 @@ interface PreviewsProps {
 }
 
 // プレビュー画面
-export const Previews: React.FC<PreviewsProps> = (props) => {
+export const Previews: FC<PreviewsProps> = (props) => {
   return (
     <div className={Style.previewContainer}>
       <HTMLFlipBook

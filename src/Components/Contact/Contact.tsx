@@ -92,7 +92,6 @@ export const Contact: React.FC = () => {
 
         <Button 
           className={Style.submitButton} 
-          tabIndex={0}
           onClick={() => {
             //メール送信処理
           }}>

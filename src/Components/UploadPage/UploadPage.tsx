@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { FC, useState, useMemo } from 'react';
 import { useDropzone, FileWithPath } from 'react-dropzone';
 import { Button } from '../../Common/Button/Button';
 import { Previews } from './Previews/Previews';
@@ -12,7 +12,7 @@ interface UploadedFile {
 }
 
 // 画像投稿画面
-export const UploadPage: React.FC = () => {
+export const UploadPage: FC = () => {
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
