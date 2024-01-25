@@ -1,28 +1,28 @@
-import React, { useMemo } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import Style from './Album.module.css';
-import Tsumu1 from '../../img/IMG_1198.JPG';
-import Tsumu2 from '../../img/IMG_1486.JPG';
-import Tsumu3 from '../../img/PXL_20230223_023729479.jpg';
-import Tsumu4 from '../../img/PXL_20230411_040348439.jpg';
-import Tsumu5 from '../../img/IMG_1200.JPG';
-import Tsumu6 from '../../img/PXL_20230318_034110835~2.jpg';
-import Tsumu7 from '../../img/IMG_1332.JPG';
-import Tsumu8 from '../../img/PXL_20230617_033711945.jpg';
-import Tsumu9 from '../../img/IMG_1494.JPG';
-import Tsumu10 from '../../img/IMG_1606.JPG';
-import Tsumu11 from '../../img/PXL_20230721_020838287.jpg';
-import Tsumu12 from '../../img/PXL_20230714_055350353.MP.jpg';
-import Tsumu13 from '../../img/PXL_20230721_035057908.MP.jpg';
-import Tsumu14 from '../../img/PXL_20230811_030717419.jpg';
-import Tsumu15 from '../../img/PXL_20230811_075309389.jpg';
-import Tsumu16 from '../../img/PXL_20230721_020847039.TS.mp4';
-import Tsumu17 from '../../img/PXL_20230902_024347055.jpg';
-import Tsumu18 from '../../img/PXL_20230916_071312234.TS.mp4';
-import Tsumu19 from '../../img/PXL_20231026_031709635.jpg';
-import Tsumu20 from '../../img/PXL_20231026_055600700.jpg';
-import Tsumu21 from '../../img/PXL_20231111_051859367.TS.mp4';
-import Tsumu22 from '../../img/PXL_20231125_020612324.TS.mp4';
+import React, { useMemo } from "react";
+import HTMLFlipBook from "react-pageflip";
+import Style from "./Album.module.css";
+import Tsumu1 from "../../img/IMG_1198.JPG";
+import Tsumu2 from "../../img/IMG_1486.JPG";
+import Tsumu3 from "../../img/PXL_20230223_023729479.jpg";
+import Tsumu4 from "../../img/PXL_20230411_040348439.jpg";
+import Tsumu5 from "../../img/IMG_1200.JPG";
+import Tsumu6 from "../../img/PXL_20230318_034110835~2.jpg";
+import Tsumu7 from "../../img/IMG_1332.JPG";
+import Tsumu8 from "../../img/PXL_20230617_033711945.jpg";
+import Tsumu9 from "../../img/IMG_1494.JPG";
+import Tsumu10 from "../../img/IMG_1606.JPG";
+import Tsumu11 from "../../img/PXL_20230721_020838287.jpg";
+import Tsumu12 from "../../img/PXL_20230714_055350353.MP.jpg";
+import Tsumu13 from "../../img/PXL_20230721_035057908.MP.jpg";
+import Tsumu14 from "../../img/PXL_20230811_030717419.jpg";
+import Tsumu15 from "../../img/PXL_20230811_075309389.jpg";
+import Tsumu16 from "../../img/PXL_20230721_020847039.TS.mp4";
+import Tsumu17 from "../../img/PXL_20230902_024347055.jpg";
+import Tsumu18 from "../../img/PXL_20230916_071312234.TS.mp4";
+import Tsumu19 from "../../img/PXL_20231026_031709635.jpg";
+import Tsumu20 from "../../img/PXL_20231026_055600700.jpg";
+import Tsumu21 from "../../img/PXL_20231111_051859367.TS.mp4";
+import Tsumu22 from "../../img/PXL_20231125_020612324.TS.mp4";
 
 // メインアルバムコンポーネント
 export const Album = () => {
@@ -65,7 +65,7 @@ export const Album = () => {
           <div className={Style.page}>
             <img src={Tsumu3} className={Style.photo} />
             <p className={Style.date}> 2023・1・20</p>
-            <p className={Style.text}>紬星さんは初めての長野県へお出かけ(*'▽')</p>
+            <p className={Style.text}>紬星さんは初めての長野県へお出かけ(*"▽")</p>
             <footer className={Style.footer}>3</footer>
           </div>
           {/* 4ページ目 */}

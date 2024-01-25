@@ -1,6 +1,6 @@
 import { FC } from "react";
-import HTMLFlipBook from 'react-pageflip';
-import Style from './Previews.module.css';
+import HTMLFlipBook from "react-pageflip";
+import Style from "./Previews.module.css";
 
 interface UploadedFile {
   file: File;
@@ -51,9 +51,9 @@ export const Previews: FC<PreviewsProps> = (props) => {
         {props.selectedFiles.map((file, index) => (
           <div key={index} className={Style.page}>
             <div className={Style.previewPage}>
-              {file.file.type.startsWith('image/') ? (
+              {file.file.type.startsWith("image/") ? (
                 <img src={file.preview} className={Style.previewImage} alt={`Preview ${index}`} />
-              ) : file.file.type === 'video/mp4' ? (
+              ) : file.file.type === "video/mp4" ? (
                 <video controls className={Style.previewImage}>
                   <source src={file.preview} type="video/mp4" />
                 </video>

@@ -1,9 +1,9 @@
-import { FC, useState, useMemo } from 'react';
-import { useDropzone, FileWithPath } from 'react-dropzone';
-import { Button } from '../../Common/Button/Button';
-import { Previews } from './Previews/Previews';
-import Modal from 'react-modal';
-import Style from './UploadPage.module.css';
+import { FC, useState, useMemo } from "react";
+import { useDropzone, FileWithPath } from "react-dropzone";
+import { Button } from "../../Common/Button/Button";
+import { Previews } from "./Previews/Previews";
+import Modal from "react-modal";
+import Style from "./UploadPage.module.css";
 
 interface UploadedFile {
   file: FileWithPath;
@@ -34,13 +34,13 @@ export const UploadPage: FC = () => {
           selected: false,
         });
       } else {
-        alert('同じものは追加できないよ！');
+        alert("同じものは追加できないよ！");
         return;
       }
     });
 
     if (selectedFiles.length + newFiles.length > 10) {
-      alert('これ以上アップロードできません！');
+      alert("これ以上アップロードできません！");
       return;
     }
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
@@ -49,7 +49,7 @@ export const UploadPage: FC = () => {
   // ボタン押下後の処理
   const handleSelectButtonClick = () => {
     if (selectedIndices.length === 0) {
-      alert('どれか一つ以上選択してね！');
+      alert("どれか一つ以上選択してね！");
       return;
     }
     setIsModalOpen(true);
@@ -79,16 +79,16 @@ export const UploadPage: FC = () => {
         <input {...getInputProps()} />
         <p className={Style.drag}>思い出をドラッグ＆ドロップしてね</p>
       </div>
-      <div className={Style['photo-list']}>
+      <div className={Style["photo-list"]}>
         {selectedFiles.map((file, index) => (
           <div
             key={file.file.name}
-            className={`${Style.photo} ${selectedIndices.includes(index) ? Style.selectedBorder : ''}`}
+            className={`${Style.photo} ${selectedIndices.includes(index) ? Style.selectedBorder : ""}`}
             onClick={() => handleSelect(index)}
           >
-            {file.file.type.startsWith('image/') ? (
+            {file.file.type.startsWith("image/") ? (
               <img src={file.preview} alt="Uploaded" />
-            ) : file.file.type === 'video/mp4' ? (
+            ) : file.file.type === "video/mp4" ? (
               <video controls className={Style.photo}>
                 <source src={file.preview} type="video/mp4" />
               </video>
@@ -108,7 +108,7 @@ export const UploadPage: FC = () => {
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
-          // className={Style.modal}
+        // className={Style.modal}
         >
           <Previews selectedFiles={selectedFiles.filter((_, index) => selectedIndices.includes(index))} />
         </Modal>

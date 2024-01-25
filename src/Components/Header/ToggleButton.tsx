@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from '../../Common/Button/Button';
+import { Button } from "../../Common/Button/Button";
 import Style from "./Head.module.css";
 
 interface ToggleButtonProps {
@@ -7,7 +7,7 @@ interface ToggleButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   controls: string;
   label: string;
-};
+}
 
 // ハンバーガーメニューボタンコンポーネント
 export const ToggleButton: FC<ToggleButtonProps> = (props) => {

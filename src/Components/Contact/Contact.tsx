@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from '../../Common/Button/Button';
+import { Button } from "../../Common/Button/Button";
 import Style from "./Contact.module.css";
 
 // 問い合わせ画面
@@ -28,8 +28,8 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     let stopSubmit = false;
-    const shisuke:string = '福住静芳';
-    const tumu:string = '福住紬星';
+    const shisuke: string = "福住静芳";
+    const tumu: string = "福住紬星";
 
     if (name.trim() === "" || name !== shisuke || name !== tumu) {
       setNameError(true);
@@ -90,8 +90,8 @@ export const Contact: React.FC = () => {
           ></textarea>
         </div>
 
-        <Button 
-          className={Style.submitButton} 
+        <Button
+          className={Style.submitButton}
           onClick={() => {
             //メール送信処理
           }}>
