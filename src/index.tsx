@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import App from "./App";
+import App from "./App/App";
 import { Login } from "./Components/Login/Login";
 import { UploadPage } from "./Components/UploadPage/UploadPage";
 import { Contact } from "./Components/Contact/Contact";

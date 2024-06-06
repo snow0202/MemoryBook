@@ -108,7 +108,7 @@ export const UploadPage: FC = () => {
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
-        // className={Style.modal}
+          className={Style.modal}
         >
           <Previews selectedFiles={selectedFiles.filter((_, index) => selectedIndices.includes(index))} />
         </Modal>

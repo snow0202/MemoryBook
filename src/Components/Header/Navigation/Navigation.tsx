@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import Style from "./Head.module.css";
+import Style from "../Head.module.css";
 
 interface NavigationProps {
   open: boolean;
