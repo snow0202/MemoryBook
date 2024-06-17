@@ -6,7 +6,7 @@ import Tsumu2 from '../../img/IMG_1486.JPG';
 import Tsumu3 from '../../img/PXL_20230223_023729479.jpg';
 import Tsumu4 from '../../img/PXL_20230411_040348439.jpg';
 
-// メインアルバムコンポーネント
+// メインアルバム画面
 export const Album: FC = () => {
   return (
     <div className={Style.whole}>

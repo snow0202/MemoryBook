@@ -4,7 +4,7 @@ import { Header } from "../Header/Header";
 import { Button } from "../../Common/Button/Button";
 import Style from "./Contact.module.css";
 
-// コンポーネント: お問い合わせフォーム
+// お問い合わせフォーム画面
 export const Contact: FC = () => {
   // フォームの状態管理
   const [name, setName] = useState<string>("");
