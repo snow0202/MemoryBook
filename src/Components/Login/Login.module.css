@@ -1,7 +1,9 @@
+/* フォーム全体のスタイル */
 .form {
     text-align: center;
 }
 
+/* ヘッダーのスタイル */
 .head { 
     text-align: center;
     font-size: 90px;
@@ -16,6 +18,7 @@
     border-radius: 5px; /* クレヨンの先端を丸くする */
 }
 
+/* 入力グループ全体のスタイル */
 .label {
     margin-top: 100px;
     text-align: center;
@@ -35,6 +38,7 @@
     }
 }
 
+/* おなまえのスタイル */
 .label {
     font-size: 25px;
     font-family: 'Marker Felt', cursive;
@@ -42,6 +46,7 @@
     font-weight: bold;
 }
 
+/* テキスト入力のスタイル */
 .text {
     border: 1px solid #c8c8c8;
     border-radius: 3px;
@@ -54,10 +59,12 @@
     cursor: pointer;
 }
 
+/* パスワードラベルの追加スタイル */
 .labelPass {
     margin-right: 24px;
 }
 
+/* ログインボタンのスタイル */
 .loginButton {
     text-align: center;
     font-family: 'Marker Felt', cursive;
@@ -75,15 +82,18 @@
     box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.35);
 }
 
+/* ログインボタンのフォーカス時のスタイル */
 .loginButton:focus {
   border: thick double #32a1ce;
 }
 
+/* ログインボタンのホバー時のスタイル */
 .loginButton:hover {
     background: rgb(117,188,255);
     background: linear-gradient(270deg, rgba(117,188,255,1) 0%, rgba(62,159,252,1) 100%);
 }
 
+/* 背景画像をアニメーションで切り替えるコンテナのスタイル */
 .change-img-anim {
     text-align: center;
     width: 100%;
@@ -95,6 +105,7 @@
     animation: changeImage 55s infinite;
   }
   
+  /* 背景画像の切り替えアニメーション */
   @keyframes changeImage {
     0% {
       background-image: url('../../img/tumu1.jpg');
@@ -116,6 +127,7 @@
     }
   }
 
+  /* エラーメッセージのスタイル */
   .errorMsg {
     position:relative;
     color: #FF0000;
@@ -131,6 +143,8 @@
     -webkit-animation:fwari ease-in-out 2s infinite alternate;
     -moz-animation:fwari ease-in-out 2s infinite alternate;
   }
+
+  /* エラーメッセージのアニメーション */
   @keyframes fwari{
     0%   { transform:translate(0%, 0%); }
     100% { transform:translate(0%, -30px); }

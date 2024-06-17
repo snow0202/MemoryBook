@@ -21,11 +21,13 @@ describe('Album', () => {
     expect(dates[0]).toBeInTheDocument();
   });
 
-  it('renders a video on the appropriate pages', () => {
+  it('renders all pages correctly', () => {
     const { getByText } = render(<Album />);
 
-    // 適切なページにビデオ要素が表示されているか確認する
-    expect(getByText('喋るつむぎさん')).toBeInTheDocument();
-    expect(getByText('1歳なった')).toBeInTheDocument();
+    // 各ページのテキスト内容を確認する
+    expect(getByText('焼津病院で 紬星 はおめでたく誕生しました。')).toBeInTheDocument();
+    expect(getByText('紬星さんの誕生です。どんな大人になるか楽しみですね。')).toBeInTheDocument();
+    expect(getByText('紬星さんは初めての長野県へお出かけ(*"▽")')).toBeInTheDocument();
+    expect(getByText('なんでこれだけ画質がこんなにもひどいのか(泣)')).toBeInTheDocument();
   });
 });

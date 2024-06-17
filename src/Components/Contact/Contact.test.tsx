@@ -1,10 +1,16 @@
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Contact } from './Contact';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('Contact', () => {
+  // お問い合わせフォームが正しくレンダリングされることを確認する
   it('renders the Contact form correctly', () => {
-    const { getByLabelText, getByText } = render(<Contact />);
+    const { getByLabelText, getByText } = render(
+      <MemoryRouter>
+        <Contact />
+      </MemoryRouter>
+    );
     
     expect(getByLabelText('おなまえ*')).toBeInTheDocument();
     expect(getByLabelText('メールアドレス*')).toBeInTheDocument();
@@ -12,8 +18,13 @@ describe('Contact', () => {
     expect(getByText('送信')).toBeInTheDocument();
   });
 
+  // フィールドが空のときにエラーメッセージが表示されることを確認する
   it('shows error messages when fields are empty', () => {
-    const { getByText, container } = render(<Contact />);
+    const { getByText, container } = render(
+      <MemoryRouter>
+        <Contact />
+      </MemoryRouter>
+    );
 
     const submitButton = getByText('送信');
     fireEvent.click(submitButton);
@@ -25,8 +36,13 @@ describe('Contact', () => {
     expect(emailFormGroup).toHaveClass('formgroupError');
   });
 
+  // 有効な入力があればエラーメッセージが表示されないことを確認する
   it('does not show error messages for valid input', () => {
-    const { getByLabelText, container } = render(<Contact />);
+    const { getByLabelText, container } = render(
+      <MemoryRouter>
+        <Contact />
+      </MemoryRouter>
+    );
 
     const nameInput = getByLabelText('おなまえ*');
     const emailInput = getByLabelText('メールアドレス*');

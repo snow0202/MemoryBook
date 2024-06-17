@@ -9,6 +9,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('LoginEvent', () => {
+  // ヘルパー関数: `LoginEvent`コンポーネントのレンダリング
   const renderComponent = (props = {}) => {
     return render(
       <BrowserRouter>
@@ -22,6 +23,7 @@ describe('LoginEvent', () => {
     );
   };
 
+  // 正しい名前とパスワードが入力された場合にナビゲートする
   it('should navigate when the correct name and password are provided', () => {
     const mockNavigate = jest.fn();
     require('react-router-dom').useNavigate.mockImplementation(() => mockNavigate);
@@ -35,6 +37,7 @@ describe('LoginEvent', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/App');
   });
 
+  // 間違った名前が入力された場合にエラーメッセージが表示される
   it('should display an error message when an incorrect name is provided', () => {
     const { getByText } = renderComponent({
       name: '間違った名前',
@@ -45,6 +48,7 @@ describe('LoginEvent', () => {
     expect(getByText('おなまえ が違うよ！')).toBeInTheDocument();
   });
 
+  // 間違ったパスワードが入力された場合にエラーメッセージが表示される
   it('should display an error message when an incorrect password is provided', () => {
     const { getByText } = renderComponent({
       name: '高橋宏典',
@@ -55,6 +59,7 @@ describe('LoginEvent', () => {
     expect(getByText('パスワード が違うよ！')).toBeInTheDocument();
   });
 
+  // `isLogin`が`true`の場合にボタンが無効化される
   it('should disable the button when isLogin is true', () => {
     const { getByText } = renderComponent({
       isLogin: true,

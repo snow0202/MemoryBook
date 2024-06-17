@@ -6,6 +6,8 @@ import Style from "./Head.module.css";
 // ヘッダーコンポーネント
 export const Header: FC = () => {
   const [open, setOpen] = useState<boolean>(false);
+
+  // メニューの開閉状態を切り替える関数
   const toggleFunction = () => {
     setOpen((prevState) => !prevState);
   };

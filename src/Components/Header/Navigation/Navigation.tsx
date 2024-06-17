@@ -13,6 +13,9 @@ export const Navigation: FC<NavigationProps> = (props) => {
     <nav id={props.id} aria-hidden={!props.open} className={Style.navigation}>
       <ul>
         <li>
+          <Link to="/App">トップページ</Link>
+        </li>
+        <li>
           <Link to="/UploadPage">おもいでを増やす</Link>
         </li>
         <li>

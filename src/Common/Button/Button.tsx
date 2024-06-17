@@ -1,4 +1,4 @@
-import React, { ReactNode, ButtonHTMLAttributes } from "react";
+import { FC, ReactNode, ButtonHTMLAttributes } from "react";
 import Style from "./Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,11 +7,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 // 共通ボタンコンポーネント
-export const Button: React.FC<ButtonProps> = ({ children, variant = "default", ...props }) => {
+export const Button: FC<ButtonProps> = (props) => {
+  const { children, variant = "default", ...rest } = props;
+
   return (
     <button
       className={`${Style.button} ${Style[variant]}`}
-      {...props}
+      {...rest}
     >
       {children}
     </button>

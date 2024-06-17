@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { FC, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../Common/Button/Button";
 import Style from "./Login.module.css";
@@ -11,7 +11,7 @@ interface LoginEventProps {
 }
 
 // ログイン認証コンポーネント
-export const LoginEvent: React.FC<LoginEventProps> = (props) => {
+export const LoginEvent: FC<LoginEventProps> = (props) => {
   const navigate = useNavigate();
   const passPattern: RegExp = /^[0][6][2][3]/;
   const [isError, setIsError] = useState<string>("");

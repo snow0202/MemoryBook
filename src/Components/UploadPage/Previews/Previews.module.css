@@ -1,52 +1,58 @@
+/* プレビューコンテナのスタイル */
 .previewContainer {
-  position:relative;
+  position: relative;
   text-align: center;
-  }
-  
-  .top {
-    text-align: center;
-    background-image: url('../../../img/bookTop.jpeg');
-    background-size: 100%;
-    border: 1px solid #f5f5f5;
-    box-shadow: 3px 5px 5px rgba(3, 0, 0, 1);
 }
 
+/* トップページのスタイル */
+.top {
+  text-align: center;
+  background-image: url('../../../img/bookTop.jpeg');
+  background-size: 100%;
+  border: 1px solid #f5f5f5;
+  box-shadow: 3px 5px 5px rgba(3, 0, 0, 1);
+}
+
+/* もくじページのスタイル */
 .index {
-    position:relative;
-    background-image: url('../../../img/a523a1326973cf0c26358a4b3ba2d4af_t.jpeg');
-    background-size: 100%;
-    border: 1px solid #f5f5f5;
-    box-shadow: 5px 5px 5px -2px rgba(3, 0, 0, 1), -2px 5px 5px -2px rgba(3, 0, 0, 1);
+  position: relative;
+  background-image: url('../../../img/a523a1326973cf0c26358a4b3ba2d4af_t.jpeg');
+  background-size: 100%;
+  border: 1px solid #f5f5f5;
+  box-shadow: 5px 5px 5px -2px rgba(3, 0, 0, 1), -2px 5px 5px -2px rgba(3, 0, 0, 1);
 }
 
+/* タイトルのスタイル */
 .title {
-    position:relative;
-    top: 30%;
-    left: 10%;
-    background-color: #fff;
-    width: 350px;
-    height: 90px;
-    opacity: 0.9;
-    font-size: 60px;
-    font-family: 'Marker Felt', cursive;
-    border-radius: 5px;
-    border: 1px solid #f5f5f5;
-    box-shadow: 3px 5px 5px rgba(3, 0, 0, 1);
+  position: relative;
+  top: 30%;
+  left: 10%;
+  background-color: #fff;
+  width: 350px;
+  height: 90px;
+  opacity: 0.9;
+  font-size: 60px;
+  font-family: 'Marker Felt', cursive;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5;
+  box-shadow: 3px 5px 5px rgba(3, 0, 0, 1);
 }
 
-  .previewPage {
-    position:relative;
-    background-color: #ffefd5;
-    border: 1px solid #f5f5f5;
-    box-shadow: 5px 5px 5px -2px rgba(3, 0, 0, 1), -2px 5px 5px -2px rgba(3, 0, 0, 1);
-  }
-  
-  .previewImage {
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-    flex: 0 0 calc(25% - 16px);
-    box-sizing: border-box;
-    max-width: 360px;
-    margin: 0;
-  }
+/* 各プレビューページのスタイル */
+.previewPage {
+  position: relative;
+  background-color: #ffefd5;
+  border: 1px solid #f5f5f5;
+  box-shadow: 5px 5px 5px -2px rgba(3, 0, 0, 1), -2px 5px 5px -2px rgba(3, 0, 0, 1);
+}
+
+/* プレビュー画像のスタイル */
+.previewImage {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  flex: 0 0 calc(25% - 16px);
+  box-sizing: border-box;
+  max-width: 360px;
+  margin: 0;
+}

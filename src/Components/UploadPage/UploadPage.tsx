@@ -1,8 +1,9 @@
 import { FC, useState, useMemo } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
+import { Header } from "../Header/Header";
 import { Button } from "../../Common/Button/Button";
 import { Previews } from "./Previews/Previews";
-import Modal from "react-modal";
+import { Modal } from "../../Common/Modal/Modal";
 import Style from "./UploadPage.module.css";
 
 interface UploadedFile {
@@ -11,12 +12,15 @@ interface UploadedFile {
   selected: boolean;
 }
 
-// 画像投稿画面
+const ALLOWED_EXTENSIONS = ['jpg', 'JPG', 'png', 'mp4', 'jpeg', 'avif'];
+
+// アップロードコンポーネント
 export const UploadPage: FC = () => {
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+  // 選択されたファイルのメモ化
   const selectedFiles = useMemo(() => {
     return files.map((file, index) => ({
       ...file,
@@ -24,9 +28,25 @@ export const UploadPage: FC = () => {
     }));
   }, [files, selectedIndices]);
 
+  // ファイルの拡張子を取得する関数
+  const getFileExtension = (fileName: string) => {
+    return fileName.split('.').pop()?.toLowerCase();
+  };
+
+  // 有効な拡張子かどうかをチェックする関数
+  const isValidExtension = (fileName: string) => {
+    const extension = getFileExtension(fileName);
+    return ALLOWED_EXTENSIONS.includes(extension!);
+  };
+
+  // ファイル選択処理
   const handleFileSelect = (files: FileWithPath[]) => {
     const newFiles: UploadedFile[] = [];
-    files.forEach((file) => {
+    for (const file of files) {
+      if (!isValidExtension(file.name)) {
+        alert("アップロードできないファイル形式です！");
+        return;
+      }
       if (!selectedFiles.some((selectedFile) => selectedFile.file.name === file.name)) {
         newFiles.push({
           file,
@@ -37,7 +57,7 @@ export const UploadPage: FC = () => {
         alert("同じものは追加できないよ！");
         return;
       }
-    });
+    }
 
     if (selectedFiles.length + newFiles.length > 10) {
       alert("これ以上アップロードできません！");
@@ -46,7 +66,7 @@ export const UploadPage: FC = () => {
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
   };
 
-  // ボタン押下後の処理
+  // 選択ボタンクリック時の処理
   const handleSelectButtonClick = () => {
     if (selectedIndices.length === 0) {
       alert("どれか一つ以上選択してね！");
@@ -55,12 +75,12 @@ export const UploadPage: FC = () => {
     setIsModalOpen(true);
   };
 
-  // モーダル閉会処理
+  // モーダルを閉じる処理
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  // 個々の画像に対してboder色を効かせるための関数
+  // ファイル選択のトグル処理
   const handleSelect = (index: number) => {
     setSelectedIndices((prevSelectedIndices) => {
       if (prevSelectedIndices.includes(index)) {
@@ -74,45 +94,52 @@ export const UploadPage: FC = () => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop: handleFileSelect });
 
   return (
-    <div className={Style.container}>
-      <div className={Style.plus} {...getRootProps()}>
-        <input {...getInputProps()} />
-        <p className={Style.drag}>思い出をドラッグ＆ドロップしてね</p>
-      </div>
-      <div className={Style["photo-list"]}>
-        {selectedFiles.map((file, index) => (
-          <div
-            key={file.file.name}
-            className={`${Style.photo} ${selectedIndices.includes(index) ? Style.selectedBorder : ""}`}
-            onClick={() => handleSelect(index)}
+    <>
+      <Header />
+      <div className={Style.container}>
+        <div className={Style.plus} {...getRootProps()}>
+          <input {...getInputProps()} />
+          <p className={Style.drag}>思い出をドラッグ＆ドロップしてね</p>
+        </div>
+        <div className={Style["photo-list"]}>
+          {selectedFiles.map((file, index) => (
+            <div
+              key={file.file.name}
+              className={`${Style.photo} ${selectedIndices.includes(index) ? Style.selectedBorder : ""}`}
+              onClick={() => handleSelect(index)}
+            >
+              {file.file.type.startsWith("image/") ? (
+                <img src={file.preview} alt="Uploaded" />
+              ) : file.file.type === "video/mp4" ? (
+                <video controls className={Style.photo}>
+                  <source src={file.preview} type="video/mp4" />
+                </video>
+              ) : null}
+            </div>
+          ))}
+        </div>
+        {selectedFiles.length > 0 && (
+          <Button
+            className={Style.selectButton}
+            onClick={handleSelectButtonClick}
           >
-            {file.file.type.startsWith("image/") ? (
-              <img src={file.preview} alt="Uploaded" />
-            ) : file.file.type === "video/mp4" ? (
-              <video controls className={Style.photo}>
-                <source src={file.preview} type="video/mp4" />
-              </video>
-            ) : null}
-          </div>
-        ))}
+            アルバムに載せる
+          </Button>
+        )}
+        {isModalOpen && (
+          <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title="選択したファイル"
+            message="以下のファイルをアルバムに載せますか？"
+            className={Style.modal}
+          >
+            <div className={Style.modalContent}>
+              <Previews selectedFiles={selectedFiles.filter((_, index) => selectedIndices.includes(index))} />
+            </div>
+          </Modal>
+        )}
       </div>
-      {selectedFiles.length > 0 && (
-        <Button
-          className={Style.selectButton}
-          onClick={handleSelectButtonClick}
-        >
-          アルバムに載せる
-        </Button>
-      )}
-      {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          className={Style.modal}
-        >
-          <Previews selectedFiles={selectedFiles.filter((_, index) => selectedIndices.includes(index))} />
-        </Modal>
-      )}
-    </div>
+    </>
   );
 };

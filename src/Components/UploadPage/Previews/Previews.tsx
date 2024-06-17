@@ -39,7 +39,7 @@ export const Previews: FC<PreviewsProps> = (props) => {
         useMouseEvents={true}
         swipeDistance={30}
         showPageCorners={true}
-        disableFlipByClick={true}
+        disableFlipByClick={false}
       >
         {/* ページのトップ */}
         <div className={Style.top} />
