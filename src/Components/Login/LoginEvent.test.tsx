@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter } from 'react-router-dom';
 import { LoginEvent } from './LoginEvent';
@@ -23,6 +23,14 @@ describe('LoginEvent', () => {
     );
   };
 
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   // 正しい名前とパスワードが入力された場合にナビゲートする
   it('should navigate when the correct name and password are provided', () => {
     const mockNavigate = jest.fn();
@@ -34,6 +42,11 @@ describe('LoginEvent', () => {
     });
 
     fireEvent.click(getByText('おもいで にログイン'));
+
+    act(() => {
+      jest.advanceTimersByTime(3000);
+    });
+
     expect(mockNavigate).toHaveBeenCalledWith('/App');
   });
 
@@ -45,6 +58,7 @@ describe('LoginEvent', () => {
     });
 
     fireEvent.click(getByText('おもいで にログイン'));
+
     expect(getByText('おなまえ が違うよ！')).toBeInTheDocument();
   });
 
@@ -56,6 +70,7 @@ describe('LoginEvent', () => {
     });
 
     fireEvent.click(getByText('おもいで にログイン'));
+
     expect(getByText('パスワード が違うよ！')).toBeInTheDocument();
   });
 

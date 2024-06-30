@@ -1,5 +1,6 @@
 import { FC, useState, useMemo } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
+import { motion } from 'framer-motion';
 import { Header } from "../Header/Header";
 import { Button } from "../../Common/Button/Button";
 import { Previews } from "./Previews/Previews";
@@ -12,7 +13,7 @@ interface UploadedFile {
   selected: boolean;
 }
 
-const ALLOWED_EXTENSIONS = ['jpg', 'JPG', 'png', 'mp4', 'jpeg', 'avif'];
+const ALLOWED_EXTENSIONS = ['jpg', 'JPG', 'png', 'mp4', 'jpeg', 'avif', 'MOV'];
 
 // アップロードコンポーネント
 export const UploadPage: FC = () => {
@@ -96,7 +97,10 @@ export const UploadPage: FC = () => {
   return (
     <>
       <Header />
-      <div className={Style.container}>
+      <motion.div className={Style.container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, delay: 2 }}>
         <div className={Style.plus} {...getRootProps()}>
           <input {...getInputProps()} />
           <p className={Style.drag}>思い出をドラッグ＆ドロップしてね</p>
@@ -139,7 +143,7 @@ export const UploadPage: FC = () => {
             </div>
           </Modal>
         )}
-      </div>
+      </motion.div>
     </>
   );
 };

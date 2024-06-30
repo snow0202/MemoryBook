@@ -1,5 +1,6 @@
 import { FC } from "react";
 import HTMLFlipBook from 'react-pageflip';
+import { motion } from 'framer-motion';
 import Style from './Album.module.css';
 import Tsumu1 from '../../img/1198.JPG';
 import Tsumu2 from '../../img/IMG_1486.JPG';
@@ -9,7 +10,11 @@ import Tsumu4 from '../../img/PXL_20230411_040348439.jpg';
 // メインアルバム画面
 export const Album: FC = () => {
   return (
-    <div className={Style.whole}>
+    <motion.div
+      className={Style.whole} 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 3, delay: 2 }}>
       <div className={Style.container}>
         <HTMLFlipBook
           width={650}
@@ -60,6 +65,6 @@ export const Album: FC = () => {
           </div>
         </HTMLFlipBook>
       </div>
-    </div>
+    </motion.div>
   );
 };

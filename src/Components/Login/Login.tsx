@@ -9,7 +9,8 @@ export const Login: FC = () => {
 
   // 名前フィールドのスペースを削除する
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value.replace(/\s+/g, "")); // スペースを削除
+    // スペースを削除
+    setName(e.target.value.replace(/\s+/g, "")); 
   };
 
   return (

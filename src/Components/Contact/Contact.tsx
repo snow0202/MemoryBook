@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { motion } from 'framer-motion';
 import { Modal } from "../../Common/Modal/Modal";
 import { Header } from "../Header/Header";
 import { Button } from "../../Common/Button/Button";
@@ -92,7 +93,11 @@ export const Contact: FC = () => {
     <>
       {/* ヘッダーの表示 */}
       <Header />
-      <div className={Style.formContainer}>
+      <motion.div
+        className={Style.formContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, delay: 2 }}>
         <header>
           <h1 className={Style.header}>
             お問い合わせ
@@ -151,7 +156,7 @@ export const Contact: FC = () => {
             送信
           </Button>
         </form>
-      </div>
+      </motion.div>
 
       {/* 成功/エラーメッセージ用のモーダル */}
       <Modal

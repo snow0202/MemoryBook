@@ -16,6 +16,7 @@
     opacity: 0;
     padding: 5px; /* クレヨンの太さを調整 */
     border-radius: 5px; /* クレヨンの先端を丸くする */
+    animation-delay: calc(0s + var(--delay, 0s));
 }
 
 /* 入力グループ全体のスタイル */

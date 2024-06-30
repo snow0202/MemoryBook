@@ -1,0 +1,123 @@
+/* ローディング画面のラッパースタイル */
+.loadingWrapper {
+    width: 100vw; /* ビューポート幅 */
+    height: 100vh; /* ビューポート高さ */
+    position: fixed; /* 固定位置 */
+    left: 0;
+    top: 0;
+    background-color: #f0f8ff; /* 背景色を設定 */
+    display: flex; /* フレックスボックス */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    flex-direction: column; /* 縦方向に並べる */
+  }
+  
+  /* ローディングコンテナのスタイル */
+  .loadingContainer {
+    display: flex; /* フレックスボックス */
+    justify-content: space-between; /* 均等に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    width: 250px; /* 全体の幅 */
+    position: relative; /* 位置を相対的に設定 */
+  }
+  
+  /* 円のスタイル設定 */
+  .circle {
+    width: 45px; /* 円の幅 */
+    height: 45px; /* 円の高さ */
+    border-radius: 50%; /* 円形 */
+    background-color: #00ced1; /* 円の色 */
+    position: absolute; /* 絶対位置 */
+    transform-origin: center bottom; /* 変形の基準を中央下部に設定 */
+    animation: circleBounce .7s alternate infinite ease; /* アニメーション */
+  }
+  
+  .circle:nth-child(1) {
+    left: 0;
+    animation-delay: .3s; /* 遅延 */
+  }
+  
+  .circle:nth-child(2) {
+    left: 40%; /* 左端 */
+    transform: translateX(-50%); /* 中央揃え */
+    animation-delay: .2s; /* 遅延 */
+  }
+  
+  .circle:nth-child(3) {
+    right: 0;
+    animation-delay: .1s; /* 遅延 */
+  }
+  
+  /* 円のアニメーション設定 */
+  @keyframes circleBounce {
+    0% {
+      top: 45px; /* 上端 */
+      height: 45px; /* 高さ */
+      transform: translateY(0); /* 初期位置 */
+    }
+    50% {
+      top: 0; /* 中央 */
+      height: 45px; /* 高さ */
+      transform: translateY(-45px); /* バウンド */
+    }
+    100% {
+      top: 45px; /* 上端 */
+      height: 45px; /* 高さ */
+      transform: translateY(0); /* 元の位置 */
+    }
+  }
+  
+  /* 影のスタイル設定 */
+  .shadow {
+    width: 30px; /* 影の幅 */
+    height: 3px; /* 影の高さ */
+    border-radius: 50%; /* 円形 */
+    background-color: rgba(0, 0, 0, .5); /* 背景色 */
+    position: absolute; /* 絶対位置 */
+    top: 90px; /* 上端 */
+    transform-origin: center; /* 変形の基準 */
+    z-index: -1; /* 背面 */
+    filter: blur(1px); /* ぼかし */
+    animation: shadowScale .7s alternate infinite ease; /* アニメーション */
+  }
+  
+  .shadow:nth-child(4) {
+    left: 7px;
+    animation-delay: .3s; /* 遅延 */
+  }
+  
+  .shadow:nth-child(5) {
+    left: 43%; /* 左端 */
+    transform: translateX(-50%); /* 中央揃え */
+    animation-delay: .2s; /* 遅延 */
+  }
+  
+  .shadow:nth-child(6) {
+    right: 7px;
+    animation-delay: .1s; /* 遅延 */
+  }
+  
+  /* 影のアニメーション設定 */
+  @keyframes shadowScale {
+    0% {
+      transform: scaleX(1.5); /* 横方向に拡大 */
+    }
+    50% {
+      transform: scaleX(1); /* 元のサイズ */
+      opacity: .7; /* 透明度 */
+    }
+    100% {
+      transform: scaleX(.2); /* 横方向に縮小 */
+      opacity: .4; /* 透明度 */
+    }
+  }
+  
+  /* ローディングテキストのスタイル */
+  .loadingText {
+    font-family: 'Lato'; /* フォント */
+    font-size: 30px; /* フォントサイズ */
+    letter-spacing: 15px; /* 文字間隔 */
+    color: #00ced1; /* 文字色 */
+    margin-top: 150px; /* 上のマージン */
+  }
+  
