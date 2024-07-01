@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Modal } from "../../Common/Modal/Modal";
 import { Header } from "../Header/Header";
@@ -67,14 +68,8 @@ export const Contact: FC = () => {
 
     // フォームデータの送信
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-      if (response.ok) {
+      const response = await axios.post("http://localhost:3001/send-email", { name, email, message });
+      if (response.status === 200) {
         setModalTitle("成功"); // 成功モーダルのタイトルを設定
         setModalMessage("お問い合わせが送信されました！"); // 成功メッセージを設定
       } else {

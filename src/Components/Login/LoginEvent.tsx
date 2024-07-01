@@ -18,9 +18,7 @@ export const LoginEvent: FC<LoginEventProps> = (props) => {
   const [isError, setIsError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [kohkun, shisuke, tumu] = useMemo(() => {
-    return ["高橋宏典", "福住静芳", "福住紬星"];
-  }, []);
+  const [kohkun, shisuke, tumu] = ["高橋宏典", "福住静芳", "福住紬星"];
 
   // なまえとパスワードのテキスト判定処理
   const handleLogin = () => {
