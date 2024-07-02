@@ -1,5 +1,5 @@
-import { FC } from "react";
-import Style from "./Loading.module.css";
+import { FC } from 'react';
+import Style from './Loading.module.css';
 
 // 共通ローディングコンポーネント
 export const Loading: FC = () => {

@@ -1,11 +1,11 @@
-import { FC, useState, useMemo } from "react";
-import { useDropzone, FileWithPath } from "react-dropzone";
+import { FC, useState, useMemo } from 'react';
+import { useDropzone, FileWithPath } from 'react-dropzone';
 import { motion } from 'framer-motion';
-import { Header } from "../Header/Header";
-import { Button } from "../../Common/Button/Button";
-import { Previews } from "./Previews/Previews";
-import { Modal } from "../../Common/Modal/Modal";
-import Style from "./UploadPage.module.css";
+import { Header } from '../Header/Header';
+import { Button } from '../../Common/Button/Button';
+import { Previews } from './Previews/Previews';
+import { Modal } from '../../Common/Modal/Modal';
+import Style from './UploadPage.module.css';
 
 interface UploadedFile {
   file: FileWithPath;

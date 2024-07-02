@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { motion } from 'framer-motion';
 import Style from './Album.module.css';

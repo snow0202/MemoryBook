@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { Modal } from "../../Common/Modal/Modal";
-import { Header } from "../Header/Header";
-import { Button } from "../../Common/Button/Button";
-import Style from "./Contact.module.css";
+import { Modal } from '../../Common/Modal/Modal';
+import { Header } from '../Header/Header';
+import { Button } from '../../Common/Button/Button';
+import Style from './Contact.module.css';
 
 // お問い合わせフォーム画面
 export const Contact: FC = () => {
@@ -12,8 +12,8 @@ export const Contact: FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [nameError, setNameError] = useState<string | null>(null); // 名前エラーメッセージ
-  const [emailError, setEmailError] = useState<string | null>(null); // メールエラーメッセージ
+  const [nameError, setNameError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [modalTitle, setModalTitle] = useState<string>("");
   const [modalMessage, setModalMessage] = useState<string>("");
@@ -70,17 +70,17 @@ export const Contact: FC = () => {
     try {
       const response = await axios.post("http://localhost:3001/send-email", { name, email, message });
       if (response.status === 200) {
-        setModalTitle("成功"); // 成功モーダルのタイトルを設定
-        setModalMessage("お問い合わせが送信されました！"); // 成功メッセージを設定
+        setModalTitle("成功");
+        setModalMessage("お問い合わせが送信されました！");
       } else {
-        setModalTitle("エラー"); // エラーモーダルのタイトルを設定
-        setModalMessage("送信に失敗しました。再度お試しください。"); // エラーメッセージを設定
+        setModalTitle("エラー");
+        setModalMessage("送信に失敗しました。再度お試しください。");
       }
     } catch (error) {
-      setModalTitle("エラー"); // エラーモーダルのタイトルを設定
-      setModalMessage("エラーが発生しました。"); // エラーメッセージを設定
+      setModalTitle("エラー");
+      setModalMessage("エラーが発生しました。\n管理者に連絡してください。\n090-7860-1683");
     } finally {
-      setModalOpen(true); // モーダルを表示
+      setModalOpen(true);
     }
   };
 
@@ -113,7 +113,7 @@ export const Contact: FC = () => {
               name="name"
               value={name}
               onChange={handleInputChange}
-              onFocus={() => setNameError(null)} // フォーカス時にエラーをリセット
+              onFocus={() => setNameError(null)}
               className={Style.input}
             />
           </div>
@@ -127,7 +127,7 @@ export const Contact: FC = () => {
               name="email"
               value={email}
               onChange={handleInputChange}
-              onFocus={() => setEmailError(null)} // フォーカス時にエラーをリセット
+              onFocus={() => setEmailError(null)}
               className={Style.input}
             />
           </div>

@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import { ToggleButton } from "./ToggleButton/ToggleButton";
-import { Navigation } from "./Navigation/Navigation";
-import Style from "./Head.module.css";
+import { FC, useState } from 'react';
+import { ToggleButton } from './ToggleButton/ToggleButton';
+import { Navigation } from './Navigation/Navigation';
+import Style from './Head.module.css';
 
 // ヘッダーコンポーネント
 export const Header: FC = () => {

@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Button } from "../../../Common/Button/Button";
-import Style from "../Head.module.css";
+import { FC } from 'react';
+import { Button } from '../../../Common/Button/Button';
+import Style from '../Head.module.css';
 
 interface ToggleButtonProps {
   open: boolean;

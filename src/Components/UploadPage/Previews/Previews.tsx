@@ -1,6 +1,6 @@
-import { FC } from "react";
-import HTMLFlipBook from "react-pageflip";
-import Style from "./Previews.module.css";
+import { FC } from 'react';
+import HTMLFlipBook from 'react-pageflip';
+import Style from './Previews.module.css';
 
 interface UploadedFile {
   file: File;

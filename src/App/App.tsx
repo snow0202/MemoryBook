@@ -1,13 +1,13 @@
-import { FC } from "react";
+import { FC } from 'react';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { Login } from "../Components/Login/Login";
-import { UploadPage } from "../Components/UploadPage/UploadPage";
-import { Contact } from "../Components/Contact/Contact";
-import { Header } from "../Components/Header/Header";
-import { Album } from "../Components/Album/Album";
+import { Login } from '../Components/Login/Login';
+import { UploadPage } from '../Components/UploadPage/UploadPage';
+import { Contact } from '../Components/Contact/Contact';
+import { Header } from '../Components/Header/Header';
+import { Album } from '../Components/Album/Album';
 import { Location } from 'history';
-import Style from "./App.module.css";
+import Style from './App.module.css';
 
 // Appコンポーネント
 const App: FC = () => {

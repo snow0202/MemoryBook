@@ -1,6 +1,6 @@
-import { FC, useState } from "react";
-import { LoginEvent } from "./LoginEvent";
-import Style from "./Login.module.css";
+import { FC, useState } from 'react';
+import { LoginEvent } from './LoginEvent';
+import Style from './Login.module.css';
 
 // ログイン画面
 export const Login: FC = () => {
